@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("name",191);
             $table->bigInteger('category_id')->unsigned();
+            $table->string('post_image');
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories');
