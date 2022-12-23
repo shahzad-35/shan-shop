@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/products', [ProductController::class, 'getProducts'])->name('all-products');
-Route::post('add/product', [ProductController::class, 'storeProduct'])->name('add-product');
+Route::post('add/product', [ProductController::class, 'storeProduct'])->middleware('auth')->name('add-product');
 
 Route::get('/categories', [CategoryController::class, 'getAllCategories'])->name('all-categories');
-Route::post('add/category', [CategoryController::class, 'storeCtaegory'])->name('add-category');
+Route::post('add/category', [CategoryController::class, 'storeCtaegory'])->middleware('auth')->name('add-category');
