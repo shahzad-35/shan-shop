@@ -26,7 +26,7 @@ class CreatePostRequest extends FormRequest
         return [
             'title' => 'required',
             'category_id' => 'required|numeric',
-            'post_image' => 'required| mimes:jpeg,jpg,png|max:2048'
+            'product_image' => 'required| mimes:jpeg,jpg,png|max:2048'
         ];
     }
 
@@ -36,9 +36,9 @@ class CreatePostRequest extends FormRequest
             'title.required' => 'Please enter image title',
             'category_id.required' => 'Please select category',
             'category_id.numeric' => 'Please provide valid category id',
-            'post_image.required' => 'Please provide image of product',
-            'post_image.mime' => 'You can upload only jpeg,jpg or png images',
-            'post_image.max' => 'Your images must be less than 2MB size',
+            'product_image.required' => 'Please provide image of product',
+            'product_image.mime' => 'You can upload only jpeg,jpg or png images',
+            'product_image.max' => 'Your images must be less than 2MB size',
         ];
     }
 }

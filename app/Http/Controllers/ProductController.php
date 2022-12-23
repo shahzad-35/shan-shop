@@ -21,9 +21,9 @@ class ProductController extends Controller
         try {
             $request_params['name'] = $request->input('title');
             $request_params['category_id'] = $request->input('category_id');
-            $image = $request->file('post_image');
+            $image = $request->file('product_image');
 
-            $ext = $request->file("post_image")->getClientOriginalExtension();
+            $ext = $request->file("product_image")->getClientOriginalExtension();
             //it gives unique name to image after concatentaion with id and time
             $image_local_db_name = "product_" . uniqid() . "_" . time();
             //it gives final name of image
@@ -34,8 +34,9 @@ class ProductController extends Controller
 
             if (Product::create($request_params)) {
                 //Please add route name here where you want to redirect it
-                return redirect()->route()->with("message", "success=Product added successfully");
+                return redirect()->route('')->with("message", "success=Product added successfully");
             }
+            return redirect()->back()->with('message', 'danger=Product not created');
         } catch (Throwable $th) {
             return $this->ExceptionHandling($th, []);
         }
@@ -49,7 +50,7 @@ class ProductController extends Controller
     {
         try {
             $products = Product::getAllProducts();
-            return view('welcome')->with('product', $products);
+            return view('home', compact('products'));
         } catch (Throwable $th) {
             return $this->ExceptionHandling($th, []);
         }
