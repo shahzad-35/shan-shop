@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/',[HomeController::class,'homePage']);
+
+Route::get('/add-category',[HomeController::class,'addCategoryForm']);
+Route::post('/add-category',[HomeController::class,'storeCategory'])->name('add-category');
+
+Route::get('/add-product',[HomeController::class,'addProduct']);
+
+
+Route::get('/products', [ProductController::class, 'getProducts'])->name('all-products');
+Route::post('add/product', [ProductController::class, 'storeProduct'])->name('add-product');
+
+Route::get('/categories', [ProductController::class, 'getProducts'])->name('all-products');
