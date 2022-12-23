@@ -20,3 +20,5 @@ Route::get('/', function () {
 
 Route::get('/products', [ProductController::class, 'getProducts'])->name('all-products');
 Route::post('add/product', [ProductController::class, 'storeProduct'])->name('add-product');
+
+Route::get('/categories', [ProductController::class, 'getProducts'])->name('all-products');
