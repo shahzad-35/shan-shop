@@ -15,11 +15,10 @@
 </head>
 
 <body>
-  
    <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Sixteen <em>Clothing</em></h2></a>
+          <a class="navbar-brand" href="index.html"><h2>Premio <em>Products</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -30,9 +29,15 @@
                   <span class="sr-only">(current)</span>
                 </a>
               </li> 
+              
               <li class="nav-item">
-                <a class="nav-link" href="products.html">Our Products</a>
+                <select name='category_id'>
+                    @foreach($categories as $cate)
+                        <option value={{$cate['id']}}>{{$cate['title']}}</option>
+                    @endforeach
+                </select>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="about.html">About Us</a>
               </li>

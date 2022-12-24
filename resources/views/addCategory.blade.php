@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
 
-    <div class="latest-products">
+<div class="latest-products">
       <div class="container">
         <form method="post" action="{{route('add-category')}}">
             @csrf

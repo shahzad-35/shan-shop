@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\ProductController;
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,16 +22,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,'homePage']);
 
-Route::get('/add-category',[HomeController::class,'addCategoryForm']);
-Route::post('/add-category',[HomeController::class,'storeCategory'])->name('add-category');
+Route::get('/add-category',[CategoryController::class,'addCategoryForm']);
+Route::post('/add/category', [CategoryController::class, 'storeCtaegory'])->name('add-category');
+Route::get('/categories', [CategoryController::class, 'getAllCategories'])->name('all-categories');
 
-Route::get('/add-product',[HomeController::class,'addProduct']);
-
-Route::get('/', function () {
-    return view('homePage');
-});
-
+Route::get('/add-product',[ProductController::class,'addProduct'])->name('add-product-form');
 Route::get('/products', [ProductController::class, 'getProducts'])->name('all-products');
-Route::post('add/product', [ProductController::class, 'storeProduct'])->name('add-product');
+Route::post('/add-product', [ProductController::class, 'storeProduct'])->name('add-product');
+// Route::post('add/product', [ProductController::class, 'storeProduct'])->middleware('auth')->name('add-product');
 
-Route::get('/categories', [ProductController::class, 'getProducts'])->name('all-products');
+Route::post('login', [UserController::class, 'login']);
