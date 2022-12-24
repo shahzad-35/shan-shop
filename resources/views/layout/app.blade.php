@@ -3,14 +3,19 @@
 
 <head>
     <title>Shan Shop</title>
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-  <link rel="stylesheet" href=" {{asset('css/fontawesome.css')}}">
-  <link rel="stylesheet" href=" {{asset('css/templatemo-sixteen.css')}} ">
-  <link rel="stylesheet" href=" {{asset('css/owl.css')}}">
-  <link rel="stylesheet" href=" {{asset('css/bootstrap.css')}}">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <!-- Libraries Stylesheet -->
+    <link href="{{asset('carousel.min.css')}}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 </head>
 
@@ -18,7 +23,7 @@
    <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Premio <em>Products</em></h2></a>
+          <a class="navbar-brand" href="index.html"><h2>Premio <em>Product</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
