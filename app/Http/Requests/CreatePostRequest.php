@@ -33,7 +33,7 @@ class CreatePostRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'Please enter image title',
+            'name.required' => 'Please enter product title',
             'category_id.required' => 'Please select category',
             'category_id.numeric' => 'Please provide valid category id',
             'post_image.required' => 'Please provide image of product',

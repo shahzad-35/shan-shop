@@ -6,6 +6,7 @@ use App\Http\Requests\AddProductRequest;
 use App\Http\Requests\CreatePostRequest;
 use App\Models\Category;
 use App\Models\Product;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Throwable;
@@ -23,10 +24,8 @@ class ProductController extends Controller
      * @return [type]
      */
 
-    public function storeProduct(AddProductRequest $request)
+    public function storeProduct(CreatePostRequest $request)
     {
-        $product_data = $request->validated();
-
         try {
             $request_params['name'] = $request->input('name');
             $request_params['category_id'] = $request->input('category_id');
@@ -41,7 +40,7 @@ class ProductController extends Controller
 
             if (Product::create($request_params)) {
                 toastr()->success('Product added successfully');
-                return redirect()->route('add-product-form')->with("message", "success=Product added successfully");
+                return redirect()->route('all-products')->with("message", "success=Product added successfully");
             }
             toastr()->error('Something went wrong');
             return redirect()->back()->with('message', 'danger=Product not created');
@@ -57,8 +56,6 @@ class ProductController extends Controller
     public function getProducts(Request $request)
     {
         try {
-            $products = Product::getAllProducts()->toArray();
-            return view('welcome')->with('product', $products);
             $products = Product::getAllProducts();
             return view('home', compact('products'));
         } catch (Throwable $th) {
