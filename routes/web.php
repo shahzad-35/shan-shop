@@ -31,4 +31,6 @@ Route::get('/products', [ProductController::class, 'getProducts'])->name('all-pr
 Route::post('/add-product', [ProductController::class, 'storeProduct'])->name('add-product');
 // Route::post('add/product', [ProductController::class, 'storeProduct'])->middleware('auth')->name('add-product');
 
+Route::get('/admin',[HomeController::class,'adminPage'])->name('admin');
+
 Route::post('login', [UserController::class, 'login']);

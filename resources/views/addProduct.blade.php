@@ -3,6 +3,7 @@
 
 <div class="latest-products">  
     <div class="container">
+        <h4>Add New Product</h4>
         <form method ="post" action={{route('add-product')}} enctype="multipart/form-data">
             @csrf
             <div class="form-group">
@@ -33,6 +34,8 @@
                 <li>{{$error}}</li>
             @endforeach
       @endif
+        </div>
+      </div>
     </div>
 
 @endsection

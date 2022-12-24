@@ -12,4 +12,8 @@ class HomeController extends Controller
         $products = Product::all()->toArray();
         return view('home')->with('products',$products);
     }
+
+    public static function adminPage(){
+        return view('admin');
+    }
 }

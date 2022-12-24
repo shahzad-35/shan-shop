@@ -3,6 +3,7 @@
 
 <div class="latest-products">
       <div class="container">
+        <h4>Add New Category</h4>
         <form method="post" action="{{route('add-category')}}">
             @csrf
             <div class="form-group">
@@ -14,6 +15,6 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
-    </div>
+</div>
 
 @endsection

@@ -47,7 +47,8 @@
                     id="navbar-vertical">
                     <div class="navbar-nav w-100 overflow-auto" style="height: 410px">
                       @foreach($categories as $category)
-                        <a href="{{route('home').'/'.$category['id']}}" class="nav-item nav-link">{{$category['title']}}</a>
+                       <a href="{{route('home')}}" class="nav-item nav-link">{{$category['title']}}</a>
+                        {{-- <a href="{{route('home').'/'.$category['id']}}" class="nav-item nav-link">{{$category['title']}}</a> --}}
                       @endforeach
                     </div>
                 </nav>
