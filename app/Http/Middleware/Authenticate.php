@@ -10,8 +10,11 @@ class Authenticate
     public function handle($request, Closure $next)
     {
         if ($request->session()->has('logged_in')) {
-            $next($request);
+            return $next($request);
         }
-        return response()->json(['messages' => 'Please Login to access this route'], 401);
+    
+        else{
+            return redirect('login');
+        }
     }
 }

@@ -19,11 +19,16 @@ class UserController extends Controller
             $inputs = $request->all();
             $auth = User::validateUser($inputs);
             if ($auth) {
-                return redirect()->route('')->with("message", "success=Login successfully");
+                session()->put('logged_in',true);
+                return redirect()->route('add-product')->with("message", "success=Login successfully");
             }
             return redirect()->back()->with('message', 'danger=Invalid credentials');
         } catch (\Throwable $th) {
             return $this->ExceptionHandling($th, []);
         }
+    }
+
+    public function loginForm(){
+        return view('adminLogin');
     }
 }
