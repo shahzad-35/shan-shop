@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TitleRequest;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Throwable;
 
 class CategoryController extends Controller
 {
 
-    public static function addCategoryForm(){
+    public static function addCategoryForm()
+    {
         return view('addCategory');
     }
 
@@ -26,19 +28,24 @@ class CategoryController extends Controller
 
     public function storeCtaegory(TitleRequest $request)
     {
-        try{
-            if(Category::create($request->all())){
-                toastr()->success('New Category has been added');
+        try {
+            if (Category::create($request->all())) {
                 return redirect(url('store-category'));
-            }
-            else{
+            } else {
                 toastr()->error('Something went wrong');
             }
-
-
         } catch (\Throwable $th) {
             return $this->ExceptionHandling($th, []);
         }
-        
+    }
+
+    public function getProductsByCategory($id)
+    {
+        try {
+            $products = Product::getProductsByCategory($id);
+            return view('home', compact('products'));
+        } catch (\Throwable $th) {
+            return $this->ExceptionHandling($th, []);
+        }
     }
 }

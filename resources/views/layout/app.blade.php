@@ -3,6 +3,8 @@
 
 <head>
     <title>Shan Shop</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1367/1367686.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <style>
         ul {
             margin: 0px;
@@ -241,7 +243,8 @@
                     id="navbar-vertical">
                     <div class="navbar-nav w-100 overflow-auto" style="height: 410px">
                         @foreach ($categories as $category)
-                            <a href="{{ route('home') }}" class="nav-item nav-link">{{ $category['title'] }}</a>
+                            <a href="{{ route('category-by-id', ['id' => $category['id']]) }}"
+                                class="nav-item nav-link">{{ $category['title'] }}</a>
                             {{-- <a href="{{route('home').'/'.$category['id']}}" class="nav-item nav-link">{{$category['title']}}</a> --}}
                         @endforeach
                     </div>

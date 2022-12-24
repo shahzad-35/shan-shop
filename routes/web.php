@@ -30,5 +30,7 @@ Route::get('/add-product',[ProductController::class,'addProduct'])->middleware('
 Route::get('/products', [ProductController::class, 'getProducts'])->name('all-products');
 Route::post('/store-product', [ProductController::class, 'storeProduct'])->name('store-product');
 
+Route::get('/category/{id}', [CategoryController::class, 'getProductsByCategory'])->name('category-by-id');
+
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::get('/login',[UserController::class,'loginForm']);
