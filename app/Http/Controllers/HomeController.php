@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public static function homePage(){
-        $products = Product::all();
+        $products = Product::all()->toArray();
         return view('home')->with('products',$products);
     }
 }

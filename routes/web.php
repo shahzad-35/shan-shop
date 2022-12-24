@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/',[HomeController::class,'homePage']);
+Route::get('/',[HomeController::class,'homePage'])->name('home');
 
 Route::get('/add-category',[CategoryController::class,'addCategoryForm']);
 Route::post('/add/category', [CategoryController::class, 'storeCtaegory'])->name('add-category');
