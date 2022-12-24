@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AddProductRequest;
 use App\Http\Requests\CreatePostRequest;
 use App\Models\Category;
 use App\Models\Product;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Throwable;
@@ -14,7 +12,7 @@ use Throwable;
 class ProductController extends Controller
 {
     public static function addProduct(Request $request){
-        $categories = Category::all()->toArray();
+        $categories = Category::all();
         return view('addProduct')->with('categories',$categories);
     }
 
@@ -39,10 +37,8 @@ class ProductController extends Controller
             $request_params['post_image'] = URL::to("/") . '/uploads/' . $image_name;
 
             if (Product::create($request_params)) {
-                toastr()->success('Product added successfully');
                 return redirect()->route('all-products')->with("message", "success=Product added successfully");
             }
-            toastr()->error('Something went wrong');
             return redirect()->back()->with('message', 'danger=Product not created');
         } catch (Throwable $th) {
             return $this->ExceptionHandling($th, []);

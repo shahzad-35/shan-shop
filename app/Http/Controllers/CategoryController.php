@@ -29,7 +29,7 @@ class CategoryController extends Controller
         try{
             if(Category::create($request->all())){
                 toastr()->success('New Category has been added');
-                return redirect(url('add-category'));
+                return redirect(url('store-category'));
             }
             else{
                 toastr()->error('Something went wrong');

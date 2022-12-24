@@ -23,12 +23,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'homePage'])->name('home');
 
 Route::get('/add-category',[CategoryController::class,'addCategoryForm'])->middleware('auth');
-Route::post('/add/category', [CategoryController::class, 'storeCtaegory'])->name('add-category');
+Route::post('/store/category', [CategoryController::class, 'storeCtaegory'])->name('store-category');
 Route::get('/categories', [CategoryController::class, 'getAllCategories'])->name('all-categories');
 
 Route::get('/add-product',[ProductController::class,'addProduct'])->middleware('auth')->name('add-product-form');
 Route::get('/products', [ProductController::class, 'getProducts'])->name('all-products');
-Route::post('/add-product', [ProductController::class, 'storeProduct'])->name('add-product');
+Route::post('/store-product', [ProductController::class, 'storeProduct'])->name('store-product');
 
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::get('/login',[UserController::class,'loginForm']);
