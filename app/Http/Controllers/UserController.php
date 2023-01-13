@@ -20,6 +20,7 @@ class UserController extends Controller
             $auth = User::validateUser($inputs);
             if ($auth) {
                 session()->put('logged_in',true);
+                return view('detail');
                 return redirect()->route('add-product-form')->with("message", "success=Login successfully");
             }
             return redirect()->back()->with('message', 'danger=Invalid credentials');

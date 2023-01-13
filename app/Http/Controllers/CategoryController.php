@@ -48,4 +48,12 @@ class CategoryController extends Controller
             return $this->ExceptionHandling($th, []);
         }
     }
+
+    public function deleteCategory($id)
+    {
+        Product::where('category_id', $id)->delete(); 
+        Category::where('id', $id)->delete();
+        
+        return redirect()->back();
+    }
 }
