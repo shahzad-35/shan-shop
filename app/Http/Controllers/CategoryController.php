@@ -51,9 +51,30 @@ class CategoryController extends Controller
 
     public function deleteCategory($id)
     {
-        Product::where('category_id', $id)->delete(); 
+        Product::where('category_id', $id)->delete();
         Category::where('id', $id)->delete();
-        
+
         return redirect()->back();
+    }
+
+    public function editCategory($id)
+    {
+        $category = Category::where('id', $id)->first();
+        return view('editCategory', compact('category'));
+    }
+
+    public function updateCategory(Request $request)
+    {
+        try {
+            $request_params['title'] = $request->input('title');
+            $id = $request->get('id');
+
+            if (Category::where('id', $id)->update($request_params)) {
+                return redirect()->route('all-products')->with("message", "success=Category Updated successfully");
+            }
+            return redirect()->back()->with('message', 'danger=Category not updated');
+        } catch (Throwable $th) {
+            return $this->ExceptionHandling($th, []);
+        }
     }
 }

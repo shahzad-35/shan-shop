@@ -291,7 +291,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="cta-text">
                                 <h4>Find us</h4>
-                                <span>1010 Avenue, sw 54321, chandigarh</span>
+                                <span>Lahore, Pakistan</span>
                             </div>
                         </div>
                     </div>
@@ -300,7 +300,7 @@
                             <i class="fas fa-phone"></i>
                             <div class="cta-text">
                                 <h4>Call us</h4>
-                                <span>9876543210 0</span>
+                                <span>+923496219269</span>
                             </div>
                         </div>
                     </div>
@@ -309,7 +309,7 @@
                             <i class="far fa-envelope-open"></i>
                             <div class="cta-text">
                                 <h4>Mail us</h4>
-                                <span>mail@info.com</span>
+                                <span>shahzadhere17@gmail.com</span>
                             </div>
                         </div>
                     </div>

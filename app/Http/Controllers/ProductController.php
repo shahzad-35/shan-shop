@@ -45,20 +45,6 @@ class ProductController extends Controller
             return $this->ExceptionHandling($th, []);
         }
     }
-    /**
-     * @param Request $request
-     * This function returns all of the products
-     * @return [type]
-     */
-    public function getProducts(Request $request)
-    {
-        try {
-            $products = Product::getAllProducts();
-            return view('home', compact('products'));
-        } catch (Throwable $th) {
-            return $this->ExceptionHandling($th, []);
-        }
-    }
 
     public function getDetails(Request $request)
     {
@@ -87,7 +73,7 @@ class ProductController extends Controller
             $request_params['category_id'] = $request->input('category_id');
             $image = $request->file('post_image');
             $id = $request->get('id');
-            
+
             $ext = $request->file("post_image")->getClientOriginalExtension();
             $image_local_db_name = "product_" . uniqid() . "_" . time();
             $image_name = $image_local_db_name . ".$ext";
@@ -96,9 +82,9 @@ class ProductController extends Controller
             $request_params['post_image'] = URL::to("/") . '/uploads/' . $image_name;
 
             if (Product::where('id', $id)->update($request_params)) {
-                return redirect()->route('all-products')->with("message", "success=Product added successfully");
+                return redirect()->route('detail-page')->with("message", "success=Product updated successfully");
             }
-            return redirect()->back()->with('message', 'danger=Product not created');
+            return redirect()->back()->with('message', 'danger=Product not updated');
         } catch (Throwable $th) {
             return $this->ExceptionHandling($th, []);
         }
