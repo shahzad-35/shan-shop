@@ -30,7 +30,7 @@ class CategoryController extends Controller
     {
         try {
             if (Category::create($request->all())) {
-                return redirect(url('store-category'));
+                return redirect()->route('detail-page')->with("message", "success=Category Saved successfully");
             } else {
                 toastr()->error('Something went wrong');
             }

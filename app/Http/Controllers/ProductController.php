@@ -38,7 +38,7 @@ class ProductController extends Controller
             $request_params['post_image'] = URL::to("/") . '/uploads/' . $image_name;
 
             if (Product::create($request_params)) {
-                return redirect()->route('all-products')->with("message", "success=Product added successfully");
+                return redirect()->route('detail-page')->with("message", "success=Product Saved successfully");
             }
             return redirect()->back()->with('message', 'danger=Product not created');
         } catch (Throwable $th) {
