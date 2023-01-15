@@ -70,7 +70,7 @@ class CategoryController extends Controller
             $id = $request->get('id');
 
             if (Category::where('id', $id)->update($request_params)) {
-                return redirect()->route('all-products')->with("message", "success=Category Updated successfully");
+                return redirect()->route('detail-page')->with("message", "success=Category Updated successfully");
             }
             return redirect()->back()->with('message', 'danger=Category not updated');
         } catch (Throwable $th) {
