@@ -10,7 +10,7 @@ class Product extends Model
     protected $primaryKey = "id";
 
     public $timestamps = true;
-    protected $fillable = ['name', 'category_id', 'post_image'];
+    protected $fillable = ['name', 'category_id', 'post_image','description'];
 
     public function category()
     {

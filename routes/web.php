@@ -27,7 +27,8 @@ Route::post('/store/category', [CategoryController::class, 'storeCtaegory'])->mi
 Route::get('/categories', [CategoryController::class, 'getAllCategories'])->name('all-categories');
 
 Route::get('/add-product', [ProductController::class, 'addProduct'])->middleware('auth')->name('add-product-form');
-Route::get('/detail-page', [ProductController::class, 'getDetails'])->middleware('auth')->name('detail-page');
+Route::get('/detail-page', [ProductController::class, 'getDetails'])->name('detail-page');
+Route::get('product/{id}',[ProductController::class,'getProductDetail'])->name('product-detail');
 
 Route::post('/store-product', [ProductController::class, 'storeProduct'])->name('store-product');
 

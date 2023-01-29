@@ -57,7 +57,7 @@
         .banner {
             position: relative;
             height: 450px;
-            background-image: url("https://cdn.metro-online.pk/dashboard/images/133800884.jpg");
+            background-image: url('images/cover.png');
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -90,10 +90,10 @@
             padding: 4px 5px;
         }
 
-        textarea {
+        /* textarea {
             width: calc(100% - 12px);
             padding: 5px;
-        }
+        } */
 
         .item:hover p,
         .item:hover i,
@@ -248,7 +248,6 @@
         <form method="post" action={{ route('store-product') }} enctype="multipart/form-data">
             @csrf
             <div class="banner" style="margin-bottom: 11px">
-                <h1>Shan Products</h1>
             </div>
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
@@ -264,6 +263,12 @@
                 <label for="name">Name</label>
                 <input type="text" name='name' class="form-control" id="name"
                     placeholder="Enter product name">
+            </div>
+
+            <div class="form-group">
+                <label for="decription">Description</label>
+                <textarea type="text" name='description' class="form-control" id="decription"
+                    placeholder="Enter product Decription"></textarea>
             </div>
 
             <div class="form-group">

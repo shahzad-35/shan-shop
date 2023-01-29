@@ -36,6 +36,7 @@ class ProductController extends Controller
 
             $image->move(public_path() . '/uploads', $image_name);
             $request_params['post_image'] = URL::to("/") . '/uploads/' . $image_name;
+            $request_params['description'] = $request->input('description');
 
             if (Product::create($request_params)) {
                 return redirect()->route('detail-page')->with("message", "success=Product Saved successfully");
@@ -48,8 +49,8 @@ class ProductController extends Controller
 
     public function getDetails(Request $request)
     {
-        $categories = Category::get();
-        $products = Product::with('category')->get();
+        $categories = Category::get()->toArray();
+        $products = Product::with('category')->get()->toArray();
         return view('detail', compact('categories', 'products'));
     }
 
@@ -86,6 +87,15 @@ class ProductController extends Controller
             }
             return redirect()->back()->with('message', 'danger=Product not updated');
         } catch (Throwable $th) {
+            return $this->ExceptionHandling($th, []);
+        }
+    }
+
+    public function getProductDetail($id){
+        try{
+            $product = Product::where('id', $id)->first();
+            return view('productDetails')->with('product',$product);
+        }catch(Throwable $th){
             return $this->ExceptionHandling($th, []);
         }
     }

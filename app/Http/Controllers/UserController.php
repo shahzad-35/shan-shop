@@ -25,7 +25,7 @@ class UserController extends Controller
                 return redirect()->route('detail-page');
             }
             return redirect()->back()->with('message', 'danger=Invalid credentials');
-        } catch (\Throwable $th) {
+        } catch (\Exception $th) {
             return $this->ExceptionHandling($th, []);
         }
     }

@@ -9,8 +9,10 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public static function homePage(){
-        $products = Product::all();
-        return view('home')->with('products',$products);
+        $categories = Category::with('product')->get();
+        return view('home')->with('categories',$categories);
+        // $products = Product::all();
+        // return view('home')->with('products',$products);
     }
 
     public static function adminPage(){
