@@ -21,9 +21,4 @@ class Product extends Model
     {
         return Product::with('category')->get();
     }
-
-    public static function getProductsByCategory($id)
-    {
-        return Product::where('category_id', $id)->get();
-    }
 }
