@@ -42,8 +42,8 @@ class CategoryController extends Controller
     public function getProductsByCategory($id)
     {
         try {
-            $products = Product::getProductsByCategory($id);
-            return view('home', compact('products'));
+            $products = Category::where('id', $id)->with('product')->first();
+            return view('product-by-category', compact('products'));
         } catch (\Throwable $th) {
             return $this->ExceptionHandling($th, []);
         }
