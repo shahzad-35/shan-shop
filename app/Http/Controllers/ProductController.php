@@ -81,6 +81,7 @@ class ProductController extends Controller
 
             $image->move(public_path() . '/uploads', $image_name);
             $request_params['post_image'] = URL::to("/") . '/uploads/' . $image_name;
+            $request_params['description'] = $request->input('description');
 
             if (Product::where('id', $id)->update($request_params)) {
                 return redirect()->route('detail-page')->with("message", "success=Product updated successfully");

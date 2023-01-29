@@ -57,7 +57,7 @@
         .banner {
             position: relative;
             height: 450px;
-            background-image: url('images/cover.png');
+            background-image: url("{{asset('images/cover.png')}}");
             background-size: cover;
             display: flex;
             justify-content: center;

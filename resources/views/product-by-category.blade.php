@@ -7,7 +7,8 @@
             </div>
             <div class="row px-xl-5 pb-3">
                 @foreach ($products['product'] as $product)
-                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="col-lg-2 col-md-6 col-sm-12 pb-1">
+                        <a href={{ url('product/' . $product['id']) }}>
                         <div class="card product-item border-0 mb-4">
 
                             <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
@@ -23,6 +24,7 @@
                             </div>
 
                         </div>
+                    </a>
                     </div>
                 @endforeach
             </div>

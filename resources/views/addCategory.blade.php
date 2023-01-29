@@ -58,7 +58,7 @@
         .banner {
             position: relative;
             height: 450px;
-            background-image: url("https://cdn.metro-online.pk/dashboard/images/133800884.jpg");
+            background-image: url("{{asset('images/cover.png')}}");
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -249,7 +249,6 @@
         <form method="post" action="{{ route('store-category') }}">
             @csrf
             <div class="banner" style="margin-bottom: 11px">
-                <h1>Shan Products</h1>
             </div>
             @if (count($errors) > 0)
                 <div class="alert alert-danger">

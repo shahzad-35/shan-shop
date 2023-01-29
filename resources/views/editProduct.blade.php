@@ -57,7 +57,7 @@
         .banner {
             position: relative;
             height: 450px;
-            background-image: url("https://cdn.metro-online.pk/dashboard/images/133800884.jpg");
+            background-image: url("{{asset('images/cover.png')}}");
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -248,7 +248,7 @@
         <form method="post" action={{ route('update-product') }} enctype="multipart/form-data">
             @csrf
             <div class="banner" style="margin-bottom: 11px">
-                <h1>Shan Products</h1>
+               
             </div>
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
@@ -264,6 +264,12 @@
                 <label for="name">Name</label>
                 <input type="text" name='name' class="form-control" id="name"
                     placeholder="Enter product name" value="{{ $product['name'] }}">
+            </div>
+
+             <div class="form-group">
+                <label for="description">Description</label>
+                <textarea type="text" name='description' class="form-control" id="description"
+                    placeholder="Enter product description" value="{{$product['description']}}">{{$product['description']}}</textarea>
             </div>
 
             <div class="form-group">

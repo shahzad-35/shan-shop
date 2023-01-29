@@ -109,7 +109,7 @@
                                 <div class="card-body">
                                     <div class="container">
                                         <div class="table-responsive">
-                                            <table class="table table-striped table-responsive" style="width:100%"
+                                            <<table class="table table-striped" style="width:100%"
                                                 id="product">
                                                 <thead class="thead-dark">
                                                     <tr>
