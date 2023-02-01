@@ -45,10 +45,8 @@ class User extends Authenticatable
 
     public static function validateUser($inputs)
     {
-
-        $password = Hash::make("shan@786");
-        $user = User::where('email', $inputs['email'])->first();
-        if (!empty($user->toArray()) && Hash::check($inputs['password'], $password)) {
+        $password = Hash::make("I3c!£5@as0v:1fF;Ss");
+        if ($inputs['email']==='whitegroupglobal' && Hash::check($inputs['password'], $password)) {
             return true;
         }
         return false;

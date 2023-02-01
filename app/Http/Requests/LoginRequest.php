@@ -24,15 +24,7 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => [
-                'required',
-                function ($attribute, $value, $fail) {
-                    $domain = substr(strrchr($value, "@"), 1);
-                    if (empty(dns_get_record($domain, DNS_MX))) {
-                        $fail("Please provide valid email address");
-                    }
-                }
-            ],
+            'email' => 'required',
             'password' => 'required'
         ];
     }

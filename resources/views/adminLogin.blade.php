@@ -20,8 +20,8 @@
             <form method ="post" action={{route('login')}} enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control border border-primary" id="exampleInputEmail1"
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="text" class="form-control border border-primary" id="exampleInputEmail1"
                         name="email">
                 </div>
                 <div class="mb-3">
