@@ -198,6 +198,22 @@
             font-size: 14px;
             color: #878787;
         }
+
+        .zoom-img {
+        overflow: hidden;
+        }
+
+        .zoom-img img {
+              width: 700px;
+        height: 500px;
+        object-fit: cover;
+        transition: all .3s ease;
+        }
+
+        .zoom-img img:hover {
+        transform: scale(1.2);
+        }
+
     </style>
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -229,11 +245,11 @@
     </div>
     <!-- Topbar End -->
     <div class="productDetail">
-        <div class="productImage">
+        <div class="productImage zoom-img">
             @if($product['post_image']!='')  
-                          <img width="700" height="500" src="{{$product['post_image'] }}" alt="No image">
+                          <img src="{{$product['post_image'] }}" alt="No image">
                           @else
-                          <img width="700" height="500" src="{{asset('images/no_image.png')}}" alt="No image">
+                          <img src="{{asset('images/no_image.png')}}" alt="No image">
                           @endif
                         
         </div>

@@ -11,7 +11,7 @@
                         <a href={{ url('product/' . $product['id']) }}>
                         <div class="card product-item border-0 mb-4">
 
-                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0 productListing">
                                 @if ($product['post_image'] != '')
                                     <img class="img-fluid w-100" src="{{ $product['post_image'] }}" alt="No image">
                                 @else
