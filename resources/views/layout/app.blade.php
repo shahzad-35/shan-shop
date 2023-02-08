@@ -244,7 +244,7 @@
                     id="navbar-vertical">
                     <div class="navbar-nav w-100 overflow-auto" style="height: 410px">
                         @foreach ($categories as $category)
-                            <a href="{{ route('category-by-id', ['id' => $category['id']]) }}"
+                            <a style="background-color: antiquewhite;" href="{{ route('category-by-id', ['id' => $category['id']]) }}"
                                 class="nav-item nav-link">{{ $category['title'] }}</a>
                             {{-- <a href="{{route('home').'/'.$category['id']}}" class="nav-item nav-link">{{$category['title']}}</a> --}}
                         @endforeach

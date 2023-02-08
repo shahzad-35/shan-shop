@@ -71,7 +71,7 @@ body {
     line-height: 1.5;
     color: #6f6f6f;
     text-align: left;
-    background-color: #fff;
+    background-color: #f5f5f5;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -9924,7 +9924,7 @@ a.text-dark:focus {
 
 .section-title span {
     position: relative;
-    background: #ffffff;
+    background: #f5f5f5;
     z-index: 1;
 }
 
@@ -10014,6 +10014,7 @@ a.text-dark:focus {
 
 .backgroundImage {
     /* background-image: url("https://www.solidbackgrounds.com/download/2560x1440-blue-stained-glass-free-website-background-image.jpg"); */
+    background-color: #f5f5f5;
 }
 
 .productListing {

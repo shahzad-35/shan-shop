@@ -255,7 +255,7 @@
         </div>
         <div class="productDescription" >
             <div>
-                <h3>{{$product['name']}}</h3>
+                <h1>{{$product['name']}}</h1>
                 <p>Category: <b>{{$product['category']['title']}}</b> </p>
                 <p>{{$product['description']}}</p>
             </div>
